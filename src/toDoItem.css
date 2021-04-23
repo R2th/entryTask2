@@ -1,0 +1,44 @@
+#toDoItems {
+  width: auto;
+  display: grid;
+  grid-template-columns: 5% 10% 80% 5%;
+  margin-bottom: 20px;
+}
+#toDoItems:hover {
+  width: auto;
+  padding: 1rem 1.5rem;
+  font-family: Poppins;
+  color: rgb(51, 51, 51);
+  border-radius: 4px;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid black;
+  font: 400 13.3333px Aria;
+  transition: all 0.2s ease 0s;
+  box-shadow: var(--shadow);
+}
+.deleteIcons {
+  width: 30px;
+  height: 30px;
+  margin: auto 0;
+  font-size: 14px;
+  color: #b18989;
+  border-radius: 50px;
+  background-color: transparent;
+}
+#toDoItems .title {
+  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #4d4d4d;
+  min-width: 230px;
+  max-width: 550px;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 300;
+}
+.deleteIcons:after {
+  content: "×";
+}
+.deleteIcons:hover {
+  color: #af5b5e;
+}

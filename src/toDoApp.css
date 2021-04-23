@@ -1,0 +1,73 @@
+.e-flex {
+  display: flex;
+  margin-bottom: -20px;
+  margin-top: 0px;
+  margin-left: 500px;
+  margin-right: 500px;
+}
+
+.e-flex-item {
+  width: 100%;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  border: 1px solid #4390e1;
+  box-sizing: border-box;
+  box-shadow: 0 2px 2px rgb(0 90 250 / 5%), 0 4px 4px rgb(0 90 250 / 5%),
+    0 8px 8px rgb(0 90 250 / 5%), 0 16px 16px rgb(0 90 250 / 5%);
+}
+
+.e-flex-image {
+  height: 200px;
+  background-color: #eee;
+  border-radius: 4px 4px 0 0;
+  flex-shrink: 0;
+}
+
+.e-flex-content {
+  padding: 20px;
+  background-color: white;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.e-flex-title {
+  margin-bottom: 20px;
+}
+
+.e-flex-title span,
+.e-flex-time {
+}
+
+.e-flex-time {
+  width: 50px;
+  height: 20px;
+  margin-bottom: 0;
+  margin-top: auto;
+}
+
+#addItem:hover {
+  
+  border: 1px solid rgb(240, 29, 110);
+}
+
+#addItem {
+  width: auto;
+  display: block;
+  padding: 1.5rem;
+  margin-top: 10px;
+  font-family: Poppins;
+  color: rgb(51, 51, 51);
+  border-radius: 4px;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid black;
+  font: 400 13.3333px Aria;
+  transition: all 0.2s ease 0s;
+  box-shadow: var(--shadow);
+}
