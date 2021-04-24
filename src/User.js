@@ -254,29 +254,29 @@ export default function User() {
   return (
     <div id="user">
       <div id="content">
-        <h1 id="name">{data[parseInt(id)]?.name}</h1>
-        <h4 id="username">{data[parseInt(id)]?.username}</h4>
-        <h2 id="companyName">{data[parseInt(id)]?.company.name}</h2>
+        <h1 id="name">{data[parseInt(id) - 1]?.name}</h1>
+        <h4 id="username">{data[parseInt(id) - 1]?.username}</h4>
+        <h2 id="companyName">{data[parseInt(id) - 1]?.company.name}</h2>
         <div id="email">
           <img src={mail} height="19px" width="24px" />
-          <h3>{data[parseInt(id)]?.email}</h3>
+          <h3>{data[parseInt(id) - 1]?.email}</h3>
         </div>
         <div id="address">
           <img src={address} height="19px" width="24px" />
           <h3>
-            {data[parseInt(id)]?.address.street},{" "}
-            {data[parseInt(id)]?.address.suite},{" "}
-            {data[parseInt(id)]?.address.city},{" "}
-            {data[parseInt(id)]?.address.zipcode}{" "}
+            {data[parseInt(id) - 1]?.address.street},{" "}
+            {data[parseInt(id) - 1]?.address.suite},{" "}
+            {data[parseInt(id) - 1]?.address.city},{" "}
+            {data[parseInt(id) - 1]?.address.zipcode}{" "}
           </h3>
         </div>
         <div id="phoneNumber">
           <img src={phoneNumber} height="19px" width="24px" />
-          <h3>{data[parseInt(id)]?.phone}</h3>
+          <h3>{data[parseInt(id) - 1]?.phone}</h3>
         </div>
         <div id="website">
           <img src={web} height="19px" width="24px" />
-          <h3>{data[parseInt(id)]?.website}</h3>
+          <h3>{data[parseInt(id) - 1]?.website}</h3>
         </div>
       </div>
     </div>
