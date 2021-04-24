@@ -3,19 +3,23 @@
   display: grid;
   grid-template-columns: 5% 10% 80% 5%;
   margin-bottom: 20px;
+  padding: 1rem 1.5rem;
 }
 #toDoItems:hover {
   width: auto;
-  padding: 1rem 1.5rem;
+
   font-family: Poppins;
   color: rgb(51, 51, 51);
   border-radius: 4px;
   outline: none;
   background-color: transparent;
-  border: 1px solid black;
+  border: 1px solid rgb(25, 216, 241);
   font: 400 13.3333px Aria;
   transition: all 0.2s ease 0s;
   box-shadow: var(--shadow);
+  box-sizing: border-box;
+  box-shadow: 0 2px 2px rgb(0 90 250 / 5%), 0 4px 4px rgb(0 90 250 / 5%),
+    0 8px 8px rgb(0 90 250 / 5%), 0 16px 16px rgb(0 90 250 / 5%);
 }
 .deleteIcons {
   width: 30px;
@@ -25,6 +29,12 @@
   color: #b18989;
   border-radius: 50px;
   background-color: transparent;
+}
+.deleteIcons:hover {
+  border-color: rgb(221, 38, 68);
+  box-sizing: border-box;
+  box-shadow: 0 2px 2px rgb(0 90 250 / 5%), 0 4px 4px rgb(0 90 250 / 5%),
+    0 8px 8px rgb(0 90 250 / 5%), 0 2px 2px rgb(0 90 250 / 5%);
 }
 #toDoItems .title {
   font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;

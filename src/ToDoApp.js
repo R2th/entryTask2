@@ -10,6 +10,7 @@ export default class ToDoApp extends Component {
         { title: "task 1", isCompleted: true },
         { title: "task 2", isCompleted: false },
       ],
+      option: "all",
     };
     this.removeItem = this.removeItem.bind(this);
   }
@@ -44,13 +45,16 @@ export default class ToDoApp extends Component {
     data = [...data.slice(0, index), ...data.slice(index + 1)];
     this.setState({ data: data });
   };
+  changeOption = (e) => {
+    this.setState({ option: e.target.value });
+  };
   render() {
     const toDoItems = this.state.data;
     return (
       <div id="to-do-app">
         <div class="e-flex">
           <div class="e-flex-item">
-            <div class="e-flex-image"></div>
+            <div class="e-flex-image">todolist</div>
             <input
               id="addItem"
               onKeyUp={this.addItem}
@@ -59,15 +63,69 @@ export default class ToDoApp extends Component {
             <div class="e-flex-content">
               <div class="e-flex-title">
                 <span>
-                  {toDoItems.map((item, index) => (
-                    <ToDoItem
-                      index={index}
-                      item={item}
-                      removeItem={() => this.removeItem(item, index)}
-                      onClickCheck={this.ItemsCheck(item, index)}
-                    />
-                  ))}
+                  {toDoItems.map((item, index) => {
+                    if (this.state.option === "all")
+                      return (
+                        <ToDoItem
+                          index={index}
+                          item={item}
+                          removeItem={() => this.removeItem(item, index)}
+                          onClickCheck={this.ItemsCheck(item, index)}
+                        />
+                      );
+                    else if (
+                      this.state.option === "active" &&
+                      item.isCompleted === false
+                    ) {
+                      return (
+                        <ToDoItem
+                          index={index}
+                          item={item}
+                          removeItem={() => this.removeItem(item, index)}
+                          onClickCheck={this.ItemsCheck(item, index)}
+                        />
+                      );
+                    } else if (
+                      this.state.option === "completed" &&
+                      item.isCompleted === true
+                    ) {
+                      return (
+                        <ToDoItem
+                          index={index}
+                          item={item}
+                          removeItem={() => this.removeItem(item, index)}
+                          onClickCheck={this.ItemsCheck(item, index)}
+                        />
+                      );
+                    }
+                  })}
                 </span>
+              </div>
+            </div>
+            <div id="footer">
+              <h3>{this.state.data.length} item left</h3>
+              <div id="option">
+                <button
+                  className="option"
+                  onClick={this.changeOption}
+                  value="all"
+                >
+                  All
+                </button>
+                <button
+                  className="option"
+                  onClick={this.changeOption}
+                  value="active"
+                >
+                  Active
+                </button>
+                <button
+                  className="option"
+                  onClick={this.changeOption}
+                  value="completed"
+                >
+                  Completed
+                </button>
               </div>
             </div>
           </div>
