@@ -14,7 +14,7 @@ export default class ToDoApp extends Component {
     this.removeItem = this.removeItem.bind(this);
   }
   componentDidMount() {
-    const data = JSON.parse(localStorage.getItem("data"));
+    const data = JSON.parse(localStorage.getItem("data")) || [];
     this.setState({ data: data });
   }
   componentDidUpdate() {
@@ -62,7 +62,7 @@ export default class ToDoApp extends Component {
             <div class="e-flex-content">
               <div class="e-flex-title">
                 <span>
-                  {toDoItems.map((item, index) => {
+                  {toDoItems?.map((item, index) => {
                     if (this.state.option === "all")
                       return (
                         <ToDoItem
